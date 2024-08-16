@@ -19,3 +19,5 @@ private_subnet_cidr = ["10.0.2.0/24"]
 
 create_nat_gateway = false
 
+# This will create ACM only you need to create records in Route53 or your DNS Provider
+domain_name = "chapter85.com"

@@ -47,3 +47,7 @@ variable "should_create_vpc" {
   description = "create vpc or use the default one"
   type        = string
 }
+
+variable "domain_name" {
+  description = "custom domain for ACM"
+}

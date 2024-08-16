@@ -39,7 +39,7 @@ resource "aws_subnet" "private" {
 
 resource "aws_eip" "nat" {
   count = var.create_nat_gateway ? 1 : 0
-  vpc   = true
+
   tags = merge(var.default_tags, {
     Name        = "eip-nat-gw-${var.env}-${var.project_name}"
     description = "eip-nat-gw for ${var.env}-${var.project_name}"

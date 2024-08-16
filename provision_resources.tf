@@ -8,3 +8,11 @@ module "vpc" {
   create_nat_gateway  = var.create_nat_gateway
   default_tags        = var.default_tags
 }
+
+module "acm" {
+  source = "./modules/acm"
+  env                 = var.env
+  project_name        = var.project_name
+  default_tags        = var.default_tags
+  domain_name = var.domain_name
+}
