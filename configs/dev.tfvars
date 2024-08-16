@@ -14,8 +14,8 @@ env          = "development"
 should_create_vpc = false
 
 vpc_cidr            = "10.0.0.0/16"
-public_subnet_cidr  = ["10.0.1.0/24"]
-private_subnet_cidr = ["10.0.2.0/24"]
+public_subnet_cidr  = ["10.0.0.0/18", "10.0.64.0/18"]
+private_subnet_cidr = ["10.0.128.0/18", "10.0.192.0/18"]
 
 create_nat_gateway = false
 
