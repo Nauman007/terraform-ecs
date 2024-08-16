@@ -33,4 +33,4 @@ jobs:
         terraform plan -out=plan.tfplan --var-file=./configs/$ENV.tfvars --input=false
 
     - name: Terraform Apply
-      run: terraform apply "plan.tfplan" -auto-approve -input=false
+      run: terraform apply -auto-approve -input=false "plan.tfplan"
