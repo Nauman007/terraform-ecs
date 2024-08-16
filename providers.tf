@@ -11,5 +11,5 @@ terraform {
 
 provider "aws" {
   # profile = "personal"
-  region  = var.terraform_provider_region
+  region = var.terraform_provider_region
 }
