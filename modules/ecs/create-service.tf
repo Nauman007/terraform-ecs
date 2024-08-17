@@ -3,6 +3,7 @@ resource "aws_ecs_service" "my_service" {
   cluster         = aws_ecs_cluster.ecs_cluster.id
   task_definition = aws_ecs_task_definition.example.arn
   desired_count   = 1
+  health_check_grace_period_seconds = 120
   launch_type     = "FARGATE"
 
   load_balancer {
