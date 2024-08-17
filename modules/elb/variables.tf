@@ -24,3 +24,13 @@ variable "public_subnet_ids" {
   type        = list(string)
   description = "public subnet ids"
 }
+
+variable "vpc_id" {
+  type        = string
+  description = "VPC id of VPC"
+}
+
+variable "acm_arn" {
+  type        = string
+  description = "ARN of ACM"
+}

@@ -14,3 +14,14 @@ output "public_subnet_ids" {
 output "lb_sg_id" {
   value = aws_security_group.loadbalancer-sg.id
 }
+
+output "ecs_sg_id" {
+  value = aws_security_group.ecs-sg.id
+}
+
+# output "private_subnet_ids" {
+#   value = aws_subnet.private.id[*]
+# }
+output "private_subnet_ids" {
+  value = tolist(aws_subnet.private[*].id)
+}

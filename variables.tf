@@ -50,4 +50,10 @@ variable "should_create_vpc" {
 
 variable "domain_name" {
   description = "custom domain for ACM"
+  type        = string
+}
+
+variable "ecs_ports" {
+  description = "List of ports to allow in the security group"
+  type        = list(number)
 }

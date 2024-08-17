@@ -9,7 +9,7 @@ default_tags = {
 terraform_provider_region = "us-east-1"
 
 project_name = "Test-Sample"
-env          = "development"
+env          = "dev"
 
 should_create_vpc = false
 
@@ -21,3 +21,6 @@ create_nat_gateway = false
 
 # This will create ACM only you need to create records in Route53 or your DNS Provider
 domain_name = "chapter85.com"
+
+# Ports to expose for ecs sg
+ecs_ports = [3000]

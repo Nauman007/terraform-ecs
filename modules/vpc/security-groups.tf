@@ -42,12 +42,15 @@ resource "aws_security_group" "ecs-sg" {
   vpc_id      = aws_vpc.main.id
 
   # Inbound rules
-  ingress {
-    description     = "Allow HTTP traffic"
-    from_port       = 8000
-    to_port         = 8000
-    protocol        = "tcp"
-    security_groups = [aws_security_group.loadbalancer-sg.id]
+  dynamic "ingress" {
+    for_each = var.ecs_ports
+    content {
+      description     = "Allow traffic on port ${ingress.value} from LB"
+      from_port       = ingress.value
+      to_port         = ingress.value
+      protocol        = "tcp"
+      security_groups = [aws_security_group.loadbalancer-sg.id]
+    }
   }
 
   # Outbound rules

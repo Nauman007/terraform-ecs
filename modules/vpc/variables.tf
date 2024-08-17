@@ -37,3 +37,8 @@ variable "env" {
   description = "The name of the environment."
   type        = string
 }
+
+variable "ecs_ports" {
+  description = "List of ports to allow in the security group"
+  type        = list(number)
+}
